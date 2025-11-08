@@ -2,6 +2,8 @@ import Hero.*;
 import HeroEventListener.*;
 import StratsToAttack.*;
 import Enemy.*;
+import Visitors.HealingVisitor;
+import Visitors.Visitor;
 
 public class Game {
     public void start(){
@@ -25,6 +27,14 @@ public class Game {
         enemy.attack(h2);
         h2.setAttackStrategy(new MagicAttack());
         h2.attack(enemy);
+
+        Visitor healer=new HealingVisitor();
+        h1.accept(healer);
+        h2.accept(healer);
+        enemy.accept(healer);
+        h2.accept(healer);
+        h1.accept(healer);
+
         System.out.println("=== Battle End ===");
     }
 }
