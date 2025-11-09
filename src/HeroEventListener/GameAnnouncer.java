@@ -1,9 +1,9 @@
 package HeroEventListener;
-public class GameAnnouncer {
-    private static GameAnnouncer instance;
+
+public final class GameAnnouncer {
+    private static GameAnnouncer instance = new GameAnnouncer();
     private GameAnnouncer(){}
     public static GameAnnouncer getInstance(){
-        if(instance==null) instance=new GameAnnouncer();
         return instance;
     }
     public void announce(String msg){

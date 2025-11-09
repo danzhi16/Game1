@@ -1,9 +1,9 @@
 package StratsToAttack;
 import Hero.Hero;
 public class MeleeAttack implements AttackStrategy {
+    private static final int DAMAGE = 20;
     public void attack(Hero attacker, Hero target){
-        int dmg=20;
-        target.takeDamage(dmg);
-        attacker.notifyObservers(attacker.getName()+" hits "+target.getName()+" with sword for "+dmg);
+        target.takeDamage(DAMAGE);
+        attacker.notifyObservers(attacker.getName()+" hits "+target.getName()+" with sword for "+DAMAGE);
     }
 }

@@ -1,9 +1,9 @@
 package StratsToAttack;
 import Hero.Hero;
 public class RangedAttack implements AttackStrategy {
+    private static final int DAMAGE = 15;
     public void attack(Hero attacker, Hero target){
-        int dmg=15;
-        target.takeDamage(dmg);
-        attacker.notifyObservers(attacker.getName()+" shoots arrow at "+target.getName()+" for "+dmg);
+        target.takeDamage(DAMAGE);
+        attacker.notifyObservers(attacker.getName()+" shoots arrow at "+target.getName()+" for "+DAMAGE);
     }
 }
